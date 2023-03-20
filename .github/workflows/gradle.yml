@@ -13,8 +13,7 @@ on:
   pull_request:
     branches: [ "master" ]
 
-permissions:
-  contents: read
+permissions: write-all
 
 jobs:
   build:
@@ -34,3 +33,10 @@ jobs:
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
+    - name: Publish Test Results
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Test Results
+        path: '**/test-results/**/*.xml'
+        reporter: java-junit
