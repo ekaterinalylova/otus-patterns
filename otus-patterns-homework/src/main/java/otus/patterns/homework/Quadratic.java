@@ -22,6 +22,6 @@ public class Quadratic {
                     (-b - sqrt(d)) / (2 * a)
             };
         }
-        return null;
+        return new double[]{-b / (2 * a)};
     }
 }
