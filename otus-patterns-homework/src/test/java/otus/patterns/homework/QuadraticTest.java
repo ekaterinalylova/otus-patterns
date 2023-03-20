@@ -44,4 +44,12 @@ public class QuadraticTest {
 
         assertEquals(expectedMessage, actualMessage);
     }
+
+    @Test
+    public void discriminantIsZero() {
+        double[] actual = solve(1, 2 * Double.MIN_VALUE, Double.MIN_VALUE);
+        double[] expected = {-Double.MIN_VALUE};
+
+        assertThat(List.of(actual), containsInAnyOrder(expected));
+    }
 }
