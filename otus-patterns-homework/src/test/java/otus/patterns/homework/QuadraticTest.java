@@ -26,4 +26,12 @@ public class QuadraticTest {
         assertThat(List.of(actual), containsInAnyOrder(expected));
     }
 
+    @Test
+    public void oneSolutionExists() {
+        double[] actual = solve(1, 2, 1);
+        double[] expected = {-1};
+
+        assertThat(List.of(actual), containsInAnyOrder(expected));
+    }
+
 }
