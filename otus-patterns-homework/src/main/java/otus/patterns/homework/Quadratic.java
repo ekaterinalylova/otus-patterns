@@ -17,15 +17,15 @@ public class Quadratic {
             throw new UnsupportedOperationException("parameter [a] must not be zero");
         }
         double d = b * b - 4 * a * c;
+        if (Math.abs(d) < epsilon) {
+            return new double[]{-b / (2 * a)};
+        }
         if (d < 0) {
             return new double[]{};
         }
-        if (d > 0) {
-            return new double[]{
-                    (-b + sqrt(d)) / (2 * a),
-                    (-b - sqrt(d)) / (2 * a)
-            };
-        }
-        return new double[]{-b / (2 * a)};
+        return new double[]{
+                (-b + sqrt(d)) / (2 * a),
+                (-b - sqrt(d)) / (2 * a)
+        };
     }
 }
