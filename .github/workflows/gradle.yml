@@ -34,17 +34,9 @@ jobs:
       with:
         arguments: build
     - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      if: always()
-      with:
-        files: |
-          **/test-results/**/*.xml
-          **/test-results/**/*.trx
-          **/test-results/**/*.json
-    - name: Test Report
       uses: dorny/test-reporter@v1
       if: always()
       with:
-        name: Tests
+        name: Test Results
         path: '**/test-results/**/*.xml'
         reporter: java-junit
