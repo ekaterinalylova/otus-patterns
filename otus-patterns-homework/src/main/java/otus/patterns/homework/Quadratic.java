@@ -10,6 +10,10 @@ public class Quadratic {
      * @return список корней квадратного уравнения
      */
     public static double[] solve(double a, double b, double c) {
+        double d = b*b - 4*a*c;
+        if (d<0) {
+            return new double[]{};
+        }
         return null;
     }
 }
