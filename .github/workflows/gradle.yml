@@ -43,9 +43,8 @@ jobs:
           **/test-results/**/*.json
     - name: Test Report
       uses: dorny/test-reporter@v1
-      if: success() || failure()    # run this step even if previous step failed
+      if: always()
       with:
-        name: JEST Tests            # Name of the check run which will be created
-        path: |
-          **/test-results/**/*.xml
-        reporter: jest-junit        # Format of test results
+        name: Tests
+        path: '**/test-results/**/*.xml'
+        reporter: java-junit
