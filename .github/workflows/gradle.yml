@@ -36,9 +36,8 @@ jobs:
         arguments: build
     - name: Test Report
       uses: dorny/test-reporter@v1
-      if: success() || failure()
       with:
         artifact: test-results
         name: JEST Tests
-        path: '*.xml'
+        path: 'build/test-results/test/*.xml'
         reporter: jest-junit
