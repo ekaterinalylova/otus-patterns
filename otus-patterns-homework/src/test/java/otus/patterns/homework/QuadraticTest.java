@@ -7,6 +7,7 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static otus.patterns.homework.Quadratic.solve;
 
 public class QuadraticTest {
@@ -34,4 +35,13 @@ public class QuadraticTest {
         assertThat(List.of(actual), containsInAnyOrder(expected));
     }
 
+    @Test
+    public void firstCoefficientIsZero() {
+        Exception exception = assertThrows(UnsupportedOperationException.class, () -> solve(0, 1, 1));
+
+        String expectedMessage = "parameter [a] must not be zero";
+        String actualMessage = exception.getMessage();
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 }
