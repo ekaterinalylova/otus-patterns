@@ -1,4 +1,4 @@
-package otus.patterns.homework;
+package otus.patterns.homework.tdd;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static otus.patterns.homework.Quadratic.solve;
+import static otus.patterns.homework.tdd.Quadratic.solve;
 
 public class QuadraticTest {
 
