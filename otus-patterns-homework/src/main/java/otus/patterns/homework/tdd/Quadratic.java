@@ -1,4 +1,4 @@
-package otus.patterns.homework;
+package otus.patterns.homework.tdd;
 
 import static java.lang.Math.sqrt;
 
